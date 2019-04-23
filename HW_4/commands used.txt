@@ -1,0 +1,7 @@
+1) hdfs dfs -get /user/tatavag/nyc.data
+2) Rename nyc.data to nyc.csv
+3) vi mapper.py
+4) vi reducer.py
+5) hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -file /home/kharena/mapper.py -mapper mapper.py -file /home/kharena/reducer.py -reducer reducer.py -input nyc.csv -output mynyc_output
+hdfs ls /user/kharena
+6) hadoop fs -get /user/kharena/mynyc_output
